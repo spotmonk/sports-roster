@@ -1,0 +1,38 @@
+{
+  "player1": {
+    "imageUrl": "https://static.www.nfl.com/image/private/t_player_profile_landscape/f_auto/league/sfehmfwtg9i5gdcpqzgf",
+    "name": "Tom Brady",
+    "position": "QB",
+    "uid": "whuiOdaqNpOeXsnps79Kkg1lmOh2"
+  },
+  "player2": {
+    "imageUrl": "https://static.www.nfl.com/image/private/t_player_profile_landscape/f_auto/league/ldajm3cj1rs1sfwykyyk",
+    "name": "Rob Gronkowski",
+    "position": "TE",
+    "uid": "whuiOdaqNpOeXsnps79Kkg1lmOh2"
+  },
+  "player3": {
+    "imageUrl": "https://static.www.nfl.com/image/private/t_player_profile_landscape/f_auto/league/f5kj56yln1s0qlpdhbxu",
+    "name": "Derrick Henry",
+    "position": "RB",
+    "uid": "whuiOdaqNpOeXsnps79Kkg1lmOh2"
+  },
+  "player4": {
+    "imageUrl": "https://static.www.nfl.com/image/private/t_player_profile_landscape/f_auto/league/voakyrtj34sghkwxaxxf",
+    "name": "Philip Rivers",
+    "position": "QB",
+    "uid": "vCtxT4hKDnf7AOrcBIwBeum7J1x2"
+  },
+  "player5": {
+    "imageUrl": "https://static.www.nfl.com/image/private/t_player_profile_landscape/f_auto/league/lsowpkotvrwu0pfgchne",
+    "name": "Danny Amendola",
+    "position": "WR",
+    "uid": "vCtxT4hKDnf7AOrcBIwBeum7J1x2"
+  },
+  "player6": {
+    "imageUrl": "https://static.www.nfl.com/image/private/t_player_profile_landscape/f_auto/league/mphucnl2h80vne21dzik",
+    "name": "Ezekiel Elliott",
+    "position": "RB",
+    "uid": "vCtxT4hKDnf7AOrcBIwBeum7J1x2"
+  }
+}
