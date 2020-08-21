@@ -4,6 +4,7 @@ import 'firebase/auth';
 
 import fbConnection from '../helpers/data/connection';
 import MyNavBar from '../components/MyNavBar/MyNavBar';
+import Team from '../components/Team/Team';
 
 import './App.scss';
 
@@ -33,6 +34,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <MyNavBar authed={authed}/>
+        {(authed) ? <Team /> : <h2>Login to View Your Team</h2>}
       </div>
     );
   }
