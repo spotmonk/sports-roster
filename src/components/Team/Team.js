@@ -14,13 +14,19 @@ class Team extends React.Component {
 
   getPlayers = () => {
     playerData.getPlayersByUid(authData.getUid())
-      .then((rep) => this.setState({ players: rep }))
-      .then((err) => console.error('unable to get players', err));
+      .then((resp) => this.setState({ players: resp }))
+      .catch((err) => console.error('unable to get players', err));
+  }
+
+  deletePlayer = (playerId) => {
+    playerData.deletePlayerById(playerId)
+      .then(() => this.getPlayers())
+      .catch((err) => console.error("couldn't delete", err));
   }
 
   render() {
     const { players } = this.state;
-    const pCards = players.map((player) => <PlayerCard key={player.id} player={player} getPlayers={this.getPlayers}/>);
+    const pCards = players.map((player) => <PlayerCard key={player.id} player={player} deletePlayer={this.deletePlayer}/>);
     return (
       <div>
       {pCards}
