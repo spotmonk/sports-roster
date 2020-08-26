@@ -8,6 +8,7 @@ class Team extends React.Component {
   state = {
     players: [],
     formOpen: false,
+    editPlayer: {},
   }
 
   componentDidMount() {
@@ -32,14 +33,29 @@ class Team extends React.Component {
       .catch((err) => console.error("couldn't add player", err));
   }
 
+  selectEditPlayer = (player) => {
+    this.setState({ editPlayer: player, formOpen: true });
+  }
+
+  editPlayer = (playerId, playerObj) => {
+    playerData.updatePlayer(playerId, playerObj)
+      .then(() => {
+        this.getPlayers();
+        this.setState({ editPlayer: {}, formOpen: false });
+      })
+      .catch((err) => console.error('Failed to Edit', err));
+  }
+
   render() {
-    const { players, formOpen } = this.state;
-    const pCards = players.map((player) => <PlayerCard key={player.id} player={player} deletePlayer={this.deletePlayer}/>);
+    const { players, formOpen, editPlayer } = this.state;
+    const pCards = players.map((player) => <PlayerCard key={player.id} player={player} selectEditPlayer={this.selectEditPlayer} deletePlayer={this.deletePlayer}/>);
     return (
       <div>
-        <button className="btn btn-warning" onClick={ () => { this.setState({ formOpen: !formOpen }); }}>Add Player</button>
-        {formOpen ? <PlayerForm addPlayer={this.addPlayer} /> : ''}
-      {pCards}
+        <button className="btn btn-warning" onClick={ () => { this.setState({ formOpen: !formOpen, editPlayer: {} }); }}>Add Player</button>
+        {formOpen ? <PlayerForm player={editPlayer} addPlayer={this.addPlayer} /> : ''}
+        <div className="pcards d-flex">
+          {pCards}
+        </div>
       </div>
     );
   }
